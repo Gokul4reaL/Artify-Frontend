@@ -1,0 +1,18 @@
+<html>
+
+<body>
+    <div class="nft-container">
+        <div *ngIf="isFetchingImages" class="loader"></div>
+        <div class="nft-card" *ngFor="let nft of nfts">
+            <h3>{{ nft.nft_name }}</h3>
+            <p>{{ nft.description }}</p>
+            <!-- Check if the file type is an image -->
+            <ng-container *ngIf="isImage(nft.nft_item)">
+                <img [src]="nft.nft_item" alt="{{ nft.nft_name }}">
+            </ng-container>
+            <!-- Check if the file type is not an image -->
+            <p>Starting Price: {{ nft.starting_price }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div class="available-auctions-overlay" *ngIf="showOverlay">
+    <div class="available-auctions-container">
+      <div class="title"><h2>Available Auctions</h2></div>
+      <div class="available-auctions-card" *ngFor="let auction of auctions" (click)="addToAuction(auction)">
+        <h3>{{ auction.auction_name }}</h3>
+        <p>Start Time: {{ auction.start_time | date }}</p>
+      </div>
+    <div class="button-container">
+      <button (click)="closeOverlay()">Close</button>
+</div>
+    </div>
+  </div>
+  

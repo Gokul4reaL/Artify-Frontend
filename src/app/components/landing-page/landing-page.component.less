@@ -1,0 +1,237 @@
+.landing-page {
+    position: relative;
+    font-family: 'Roboto', sans-serif; /* Use a stylish font */
+    color: #090000;
+    height: 100vh;
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+    background-color: #000; /* Set a dark background color */
+    background-image: url('/assets/images/landing-page.jpg'); /* Specify the path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Keep the background image fixed while scrolling */
+  
+    .content {
+      position: relative;
+      z-index: 1; /* Ensure content is above the background image */
+      text-align: center; /* Center align the content */
+    }
+  
+    .header {
+        margin-bottom: 40px;
+        padding: 20px;
+        border-radius: 10px; /* Add border radius for rounded corners */
+        text-align: center; /* Center align the content */
+        overflow: hidden; /* Hide overflow to prevent text shadow from overflowing */
+      
+        h1 {
+            font-size: 5rem;
+            font-weight: bold;
+            color: transparent; /* Make text transparent */
+            background: linear-gradient(to right, #fff, #f00, #ff0, #f00, #fff); /* Use a gradient for text color */
+            font-family: monospace;
+            background-clip: text; /* Clip background to text */
+            -webkit-background-clip: text; /* For compatibility with older browsers */
+            animation: glowingText 2s infinite alternate; /* Add a glowing effect animation */
+            -webkit-text-stroke: 1px black; /* Add a black border around each letter */
+          }
+      
+        p {
+          font-size: 1.5rem;
+          color: #fff;
+          opacity: 0.8; /* Reduce opacity for a subtle effect */
+        }
+      
+        /* Add hover effect */
+        &:hover {
+          transform: translateY(-2px); /* Move header up slightly on hover */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a box shadow on hover for depth */
+        }
+      }       
+
+      .options {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+      
+        button {
+          padding: 15px 30px;
+          font-size: 1.5rem;
+          font-weight: bold;
+          border: none;
+          border-radius: 30px; /* Use a rounded border for buttons */
+          cursor: pointer;
+          transition: all 0.3s ease;
+          background-color: #000; /* Use a dark background color for buttons */
+          color: #fff;
+          text-transform: uppercase; /* Convert button text to uppercase for emphasis */
+      
+          /* Add glowing effect */
+          animation: glowingButton 2s infinite alternate;
+      
+          &:hover {
+            transform: scale(1.1); /* Scale up button on hover */
+          }
+      
+          &:first-child {
+            margin-right: 20px; /* Add margin between buttons */
+          }
+        }
+      }
+      
+      /* Glowing button animation */
+      @keyframes glowingButton {
+        0% {
+          box-shadow: 0 0 10px #fff; /* Add a white glow effect */
+        }
+        50% {
+          box-shadow: 0 0 20px #fff; /* Increase intensity of glow */
+        }
+        100% {
+          box-shadow: 0 0 10px #fff; /* Return to original state */
+        }
+      }      
+    
+
+      .slides {
+        display: flex;
+        justify-content: space-around; /* Distribute slides evenly */
+        align-items: center;
+        height: 70%; /* Adjust height as needed */
+      }
+      
+      .slide {
+        text-align: center;
+        padding: 30px;
+        width: 30%; /* Adjust width as needed */
+        background: transparent; /* Remove background color */
+        overflow: hidden; /* Hide overflow to prevent text shadow from overflowing */
+        position: relative;
+      
+        h2 {
+          font-size: 2rem;
+          margin-bottom: 20px;
+          color: #fff; /* Set text color */
+          text-transform: uppercase; /* Convert text to uppercase for emphasis */
+          animation: fadeInDown 1.5s ease; /* Add a fadeInDown animation */
+        }
+      
+        p {
+          font-size: 1rem;
+          color: #fff;
+          opacity: 0; /* Start with zero opacity */
+          animation: fadeInUp 1.5s ease forwards; /* Add a fadeInUp animation */
+        }
+      
+        /* Add hover effect */
+        &:hover {
+          transform: translateY(-2px); /* Move slide up slightly on hover */
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Add a box shadow on hover for depth */
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px; /* Use a rounded border for buttons */
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #000; /* Use a dark background color for buttons */
+            color: #fff;
+            text-transform: uppercase; /* Convert button text to uppercase for emphasis */
+        
+            /* Add glowing effect */
+            animation: glowingButton 2s infinite alternate;
+        
+            &:hover {
+              transform: scale(1.1); /* Scale up button on hover */
+            }
+        
+            &:first-child {
+              margin-right: 20px; /* Add margin between buttons */
+            }
+          }
+
+          @keyframes glowingButton {
+            0% {
+              box-shadow: 0 0 10px #fff; /* Add a white glow effect */
+            }
+            50% {
+              box-shadow: 0 0 20px #fff; /* Increase intensity of glow */
+            }
+            100% {
+              box-shadow: 0 0 10px #fff; /* Return to original state */
+            }
+          }  
+      
+        @keyframes fadeInDown {
+          from {
+            opacity: 0; /* Start with zero opacity */
+            transform: translateY(-50px); /* Move slide upward */
+          }
+          to {
+            opacity: 1; /* Fade in with full opacity */
+            transform: translateY(0); /* Return to original position */
+          }
+        }
+      
+        @keyframes fadeInUp {
+          from {
+            opacity: 0; /* Start with zero opacity */
+            transform: translateY(50px); /* Move slide downward */
+          }
+          to {
+            opacity: 1; /* Fade in with full opacity */
+            transform: translateY(0); /* Return to original position */
+          }
+        }
+      }      
+      
+      /* Glowing text animation */
+      @keyframes glowingText {
+        0% {
+          text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14; /* Fluorescent green */
+        }
+        50% {
+          text-shadow: 0 0 20px #39ff14, 0 0 30px #39ff14, 0 0 40px #39ff14; /* Increase intensity of text shadow */
+        }
+        100% {
+          text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14; /* Return to original state */
+        }
+      }      
+      
+    @media (max-width: 768px) {
+      .header {
+        h1 {
+          font-size: 3.5rem;
+        }
+  
+        p {
+          font-size: 1.2rem;
+        }
+      }
+  
+      .options {
+        button {
+          padding: 12px 25px;
+          font-size: 1.2rem;
+        }
+      }
+  
+      .slides {
+        .slide {
+          padding: 20px;
+          margin-bottom: 30px;
+  
+          h2 {
+            font-size: 2.5rem;
+          }
+  
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  

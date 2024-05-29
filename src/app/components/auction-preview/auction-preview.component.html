@@ -1,0 +1,30 @@
+<html>
+
+<body>
+    <div><p>Available Auctions</p></div>
+    <div *ngIf="auctions.length > 0">
+        <div class="container">
+            <ul class="card-container">
+                <li *ngFor="let auction of auctions" (click)="toggleDetails(auction)" [ngClass]="{'details-shown': auction.showDetails}">
+                    <h3>{{ auction.auction_name }}</h3>
+                    <p>Auction ID: {{ auction.auction_id }}</p>
+                    <p>Start Time: {{ auction.start_time | date:'medium' }}</p>
+                    <p>End Time: {{ auction.end_time | date:'medium' }}</p>
+                    <button class="toggle-details-button" *ngIf="!auction.showDetails">Show Details</button>
+                    <div class="details" *ngIf="auction.showDetails">
+                        <h4>Items In This Auction</h4>
+                        <div *ngFor="let nft of auction.nft_items">
+                            <h4>{{ nft.nft_name }}</h4>
+                            <p>Starting Price: {{ nft.starting_price | currency:'USD' }}</p>
+                            <p>Description: {{ nft.description }}</p>
+                        </div>
+                    </div> 
+                    <button class="join-auction-button" (click)="joinAuction(auction.auction_id)">Join Auction</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</body>    
+    
+</html>

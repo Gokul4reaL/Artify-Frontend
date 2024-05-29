@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <!-- Auction Slideshow -->
+<div class="auction-slideshow">
+    <!-- Iterate through all the existing auctions -->
+    <div class="auction-slide" *ngFor="let auction of auctions">
+      <!-- Auction card -->
+      <div class="auction-card">
+        <h3>{{ auction.auction_name }}</h3>
+        <p>Start Time: {{ auction.start_time | date }}</p>
+        <p>Items Count: {{ auction.nft_items_count }}</p>
+        <div class="start-auction-button">
+          <button (click)="startAuction(auction)">Start Auction</button>  
+          <button (click)="endAuction(auction)">End Auction</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Create Auction Button -->
+  <div class="create-auction-button">
+    <button (click)="toggleCreateAuctionForm()">Create New Auction</button>
+  </div>
+  
+  <!-- Create Auction Form -->
+  <div class="create-auction-form" *ngIf="showCreateAuctionForm">
+    <h2>Create New Auction</h2>
+    <input type="text" [(ngModel)]="newAuctionName" id="newAuctionName" name="newAuctionName" placeholder="Auction Name">
+    <input type="datetime-local" [(ngModel)]="newAuctionStartTime" id="newAuctionStartTime" name="newAuctionStartTime" placeholder="Start Time">
+    <button (click)="createAuctions()">Create Auction</button>
+  </div>
+  
+  
+  
+</body>
+
+</html>

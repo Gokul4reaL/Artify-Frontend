@@ -1,0 +1,107 @@
+@dark-background: #000;
+@dark: #ffc400;
+@neon-purple: #c13cff;
+@high-contrast-color: #ffeb3b;
+@light-gray: #ccc;
+@font-family: 'Arial', sans-serif;
+
+html {
+    background-color: @dark-background;
+}
+
+body {
+    background-color: @dark-background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: initial;
+}
+
+.auction-container {
+    background-color: @neon-purple;
+    color: @light-gray;
+    font-family: @font-family;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 300px;
+    width: 800px;
+    height: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.right-side-content {
+    width: calc(100% - 330px);
+}
+
+.current-nft-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.nft-details {
+    color: @dark-background;
+    position: relative;
+}
+
+.nft-details img {
+    max-width: 40%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+}
+
+.nft-details .label {
+    font-weight: bold;
+}
+
+.nft-details .value {
+    color: @dark-background;
+    font-weight: bold;
+}
+
+.timer {
+    color: @dark-background;
+    font-weight: bolder;
+}
+
+.bidding-section, .bid-history, .notifications, .withdraw-section {
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    padding-left: 330px;
+
+    ul {
+        color: #000;
+    }
+}
+
+.label {
+    font-weight: bold;
+    color: @dark-background;
+}
+
+.value, .subtitle {
+    color: @dark-background;
+}
+
+.bid-button, .withdraw-button {
+    background-color: @high-contrast-color;
+    color: @dark-background;
+    border: 2px solid @dark-background;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+        background-color: darken(@high-contrast-color, 10%);
+    }
+}

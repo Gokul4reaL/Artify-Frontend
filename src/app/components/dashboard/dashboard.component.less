@@ -1,0 +1,164 @@
+@neon-color: #00ff00;
+@dark-bg-color: #1a1a1a;
+@text-color: #ffffff;
+
+body {
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #000000, @dark-bg-color);
+    color: @text-color;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes up at least the full height of the viewport */
+}
+
+header {
+    background: linear-gradient(to right, @dark-bg-color, #000000);
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+}
+
+.nav-item {
+    color: @neon-color;
+    text-decoration: none;
+    margin-right: 20px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.1);
+        background-color: lighten(@neon-color, 10%);
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+        color: #000000;
+    }
+}
+
+.profile a {
+    color: @neon-color;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: lighten(@neon-color, 10%);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+      color: #000000;    
+    }
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-content: center;
+  align-self: center; /* Align dashboard to the center of the page */
+  padding-top: 20px;
+}
+
+.option {
+  margin: 10px;
+  padding: 10px;
+  background: linear-gradient(to bottom, #00ff00, #33ff33);
+  color: #000000;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+
+  h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+  }
+
+  p {
+      font-size: 1rem;
+      line-height: 1.4;
+  }
+
+  &:hover {
+      transform: translateY(-5px);
+      background-color: rgba(0, 255, 0, 0.8);
+      color: #000000;
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+  }
+}
+
+.notifications {
+  max-width: 400px;
+  margin: 20px auto; /* Adjust top and bottom margin to center vertically */
+  padding: 5px;
+  background-color: #1a1a1a;
+  border: 2px solid #00ff00;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column; /* Ensure items stack vertically */
+  align-items: center; /* Center items horizontally */
+}
+
+.notification-title {
+  color: #00ff00;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 10px 0;
+  border-bottom: 1px dashed #333;
+  position: relative; /* Add this line to create a stacking context */
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+li:before {
+  content: "\2022 ";
+  color: #00ff00;
+  display: inline-block;
+  width: 1em;
+  margin-right: 5px;
+}
+
+li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+li:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Change background color on hover */
+  cursor: pointer;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background: linear-gradient(to right, #1a1a1a, #000000);
+  color: #00ff00;
+
+  &:hover {
+    text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.8);
+  }
+}

@@ -1,0 +1,44 @@
+<!-- fa pls -->
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+<!-- animate.css -->
+<link href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/67239/animate.min.css" rel="stylesheet" />
+
+<!-- under overlay stuff -->
+<div class="body"></div>
+
+<!-- the panel -->
+<div class="overlay">
+  <div class="ui-panel login-panel animated bounceInDown">
+    <header>
+      <div class="left logo">
+        <a href="#logo"><span>Artify Admin</span></a>
+      </div>
+    </header>
+    
+    <div class="login-form">
+      <div class="subtitle left logo"><span>Login or Register</span></div>
+      <input type="text" placeholder="Email ID / Mobile Number" [(ngModel)]="username" name="username"/>
+      <input type="text" placeholder="Password" [(ngModel)]="password" name="password"/>
+    </div>
+    
+    <footer>
+      <div class="left social-login">
+        Login with 
+        <i class="fa fa-fw fa-twitter"></i>
+        <i class="fa fa-fw fa-facebook"></i>
+        <i class="fa fa-fw fa-google-plus"></i>
+      </div>
+      
+      <div class="right form-actions">
+        <a class="ui-button inactive login" (click)="adminLogin()">Login</a>
+        <a href="/admin/register" class="ui-button inactive register">Register</a>
+    </div>
+    
+    </footer>
+  </div>
+</div>
+
+<!-- get dem fancy typefaces -->
+<script type="text/javascript" src="//use.typekit.net/psm0wvc.js"></script>
+<script type="text/javascript">try{Typekit.load();}catch(e){}</script>

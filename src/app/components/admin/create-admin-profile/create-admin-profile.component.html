@@ -1,0 +1,80 @@
+<div class="container">
+    <form>
+      <!-- Account section -->
+      <div class="row">
+        <h4>Account</h4>
+        <div class="input-group">
+          <input type="text" placeholder="Full Name" [(ngModel)]="fullName" name="fullName">
+          <div class="input-icon">
+            <i class="fa fa-user"></i>
+          </div>
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Country" [(ngModel)]="country" name="country">
+          <div class="input-icon">
+            <i class="fa fa-envelope"></i>
+          </div>
+        </div>
+        <div class="input-group">
+          <input type="text" placeholder="Set a Username" [(ngModel)]="username" name="username">
+          <div class="input-icon">
+            <i class="fa fa-key"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Date of birth section -->
+      <div class="row">
+        <div class="col-half">
+          <h4>Date of Birth</h4>
+          <div class="input-group">
+            <div class="col-third">
+              <input type="text" placeholder="DD" [(ngModel)]="day" name="day">
+            </div>
+            <div class="col-third">
+              <input type="text" placeholder="MM" [(ngModel)]="month" name="month">
+            </div>
+            <div class="col-third">
+              <input type="text" placeholder="YYYY" [(ngModel)]="year" name="year">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Gender section -->
+        <div class="col-half">
+          <h4>Gender</h4>
+          <div class="input-group">
+            <input id="gender-male" type="radio" name="gender" value="male" [(ngModel)]="gender">
+            <label for="gender-male">Male</label>
+            <input id="gender-female" type="radio" name="gender" value="female" [(ngModel)]="gender">
+            <label for="gender-female">Female</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Profile photo section -->
+      <div class="row">
+        <h4>Profile Photo</h4>
+        <div class="input-group">
+          <input type="file" placeholder="Upload Photo" [(ngModel)]="profilePhoto" name="profilePhoto">
+          <div class="input-icon">
+            <i class="fa fa-camera"></i>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Terms and conditions section -->
+      <div class="row">
+        <div class="input-group">
+          <input id="terms" type="checkbox" [(ngModel)]="acceptTerms" name="acceptTerms">
+          <label for="terms">I accept the <a href="#">Terms and Conditions</a></label>
+        </div>
+      </div>
+      
+      <!-- Submit button -->
+      <div class="row">
+        <button type="submit" (click)="createprofile()">Submit</button>
+      </div>
+    </form>
+  </div>
+  

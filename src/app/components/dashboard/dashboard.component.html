@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Dashboard</title>
+    <link rel="stylesheet/less" type="text/css" href="styles.less" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.11.1/less.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">Dashboard</a>
+            <a href="#" class="nav-item">Analytics</a>
+            <a href="#" class="nav-item">Settings</a>
+        </div>
+        <div class="profile">
+            <a href="#" class="profile-link">View Profile</a>
+            <a href="/admin" class="logout-link">Logout</a>
+        </div>
+    </header>
+    <main class="dashboard">
+        <div class="option option1" routerLink="/style-transfer">
+            <h2>Artistic Style Transfer</h2>
+            <p>Transform your photos into stunning artworks.</p>
+        </div>
+        <div class="option option2" routerLink="/multi-style-transfer">
+            <h2>Multiple Style Morphing</h2>
+            <p>Create mesmerizing animations with dynamic style transitions.</p>
+        </div>
+        <div class="option option3">
+            <h2>User Preferred Transfer</h2>
+            <p>Get personalized style recommendations based on your preferences.</p>
+        </div>
+        <div class="option option4" routerLink="/nft">
+            <h2>NFTs for Artists</h2>
+            <p>Discover and support talented artists through NFTs.</p>
+        </div>       
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        &copy; 2024 Your Company Name. All rights reserved.
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+<body>
+    <div class="image-gallery">
+        <h2>Select Two Pictures</h2>
+        
+        <!-- Loader for getImages -->
+        <div *ngIf="isFetchingImages" class="loader"></div>
+      
+        <div class="gallery">
+          <div class="image" *ngFor="let picture of pictures" [class.selected]="isSelected(picture)" (click)="toggleSelected(picture)">
+            <img [src]="picture.url" [alt]="picture.name">
+          </div>
+        </div>
+      
+        <h2>Upload Your Picture</h2>
+        <div class="upload-section">
+          <input type="file" placeholder="Upload Photo" (change)="onFileSelected($event)">
+          <button class="upload-button" (click)="uploadPicture()">Upload</button>
+        </div>
+        <div class="upload-section">
+          <button class="upload-button" (click)="generateImage()">Generate Image</button>
+        </div>
+      
+        <!-- Loader for generateImage -->
+        <div *ngIf="isLoading" class="loader"></div>
+      
+        <!-- Display the styled image -->
+        <div *ngIf="styledImage" class="styled-image">
+          <h2>Styled Image</h2>
+          <img [src]="styledImage" [alt]="'Styled Image'">
+        </div>
+      </div>      
+</body>
+</html>

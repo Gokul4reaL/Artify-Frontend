@@ -1,0 +1,31 @@
+<!-- create-nft.component.html -->
+<body>
+  <div class="create-nft-container">
+    <h2>Create NFT</h2>
+    <form>
+      <div class="form-group">
+        <label for="nftName">NFT Name</label>
+        <input type="text" id="nftName" name="nftName" [(ngModel)]="nftName" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" [(ngModel)]="description" required></textarea>
+      </div>
+
+      <div class="form-group file-input-container">
+        <label for="nftItem" class="file-input-label">Choose File</label>
+        <input type="file" id="nftItem" name="nftItem" class="file-input" (change)="onFileSelected($event)" required>
+        <span *ngIf="selectedFileName" class="file-name">{{ selectedFileName }}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="startingPrice">Starting Price</label>
+        <input type="number" id="startingPrice" name="startingPrice" [(ngModel)]="startingPrice" required>
+      </div>
+
+      <div class="form-group">
+        <button type="submit" (click)="createNFT()">Create NFT</button>
+      </div>
+    </form>
+  </div>
+</body>
